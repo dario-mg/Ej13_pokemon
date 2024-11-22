@@ -1,0 +1,11 @@
+<resources>
+    <!-- Tema personalizado -->
+    <style name="Theme.Pokemon" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#FF0000</item>  <!-- Color principal de la app -->
+        <item name="colorPrimaryVariant">#FF0000</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Personalización del botón -->
+        <item name="buttonStyle">@style/CustomButtonStyle</item>  <!-- Estilo para los botones -->
+    </style>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Aquí solo deberían ir los estilos generales, no los temas -->
+    <style name="CustomButtonStyle">
+        <item name="android:background">@color/colorBotonNormal</item>  <!-- Color de fondo -->
+        <item name="android:textColor">#FFFFFF</item>  <!-- Color del texto -->
+        <item name="android:padding">16dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+</resources>
+
+

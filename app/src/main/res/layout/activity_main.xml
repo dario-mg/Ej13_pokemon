@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imagenFondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pokemon_fondo" />
+
+    <ImageView
+        android:id="@+id/logoImagen"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/pokemon_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textoInstrucciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:capitalize="characters"
+        android:text="Escribe un pokemon que este disponible"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImagen" />
+
+    <LinearLayout
+        android:id="@+id/lineaAutoComplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoInstrucciones">
+
+        <!-- Primer AutoCompleteTextView -->
+        <AutoCompleteTextView
+            android:id="@+id/autoCompletarPokemon1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_border"
+            android:hint="Pokémon 1"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="24dp" />
+
+        <!-- Segundo AutoCompleteTextView -->
+        <AutoCompleteTextView
+            android:id="@+id/autoCompletarPokemon2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_border"
+            android:hint="Pokémon 2"
+            android:padding="5dp"
+            android:textAlignment="center"
+            android:textSize="24dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lineaTarjetas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:padding="16dp"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineaAutoComplete">
+
+        <!-- Tarjeta 1 -->
+        <include
+            android:id="@+id/tarjetaEstadisticasPokemon1"
+            layout="@layout/card_pokemon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Espaciador opcional entre las dos tarjetas -->
+        <View
+            android:layout_width="20dp"
+            android:layout_height="match_parent" />
+
+        <!-- Tarjeta 2 -->
+        <include
+            android:id="@+id/tarjetaEstadisticasPokemon2"
+            layout="@layout/card_pokemon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/botonPokemonsDisponibles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="#52CCDB"
+        android:padding="10dp"
+        android:text="Pokémons disponibles"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:cornerRadius="@null"
+        app:iconPadding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineaTarjetas" />
+
+    <Button
+        android:id="@+id/botonCombate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:backgroundTint="#FF2700"
+        android:text="COMBATE"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/botonPokemonsDisponibles" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
